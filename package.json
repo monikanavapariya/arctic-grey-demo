@@ -1,0 +1,12 @@
+{
+  "name": "arctic-grey-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "shopify": "shopify theme dev --store=monikademo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
