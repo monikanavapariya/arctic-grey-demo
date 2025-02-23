@@ -3597,6 +3597,8 @@ details-disclosure > details {
 }
 
 
+img{max-width: 100%;}
+
 
 /***** Header *****/
 header.header{max-width: 100%;width: 100%;background: #fff;border-radius: 8px;padding: 10px 20px !important;}
@@ -3688,5 +3690,31 @@ ul.list-menu--inline{align-items: center;}
 }
 
 
+.image-text-grid-section{width: 100%;padding: 80px 0;}
+.image-text-grid-title{width: 100%;text-align: center;padding: 0 0 40px;}
+.image-text-grid{width: 100%;display: flex;flex-wrap: nowrap;overflow: hidden;overflow-x: auto;}
+.image-text-grid-title h3{margin: 0 0 5px;font-size: 16px;font-weight: 400;color: #000000;text-transform: uppercase;line-height: 1.2;letter-spacing: 0;}
+.image-text-grid-title h2{margin: 0 0 5px;font-size: 40px;color: #1B1F23;font-weight: 500;line-height: 1.2;letter-spacing: 0;}
+.image-text-grid-title p{margin: 0 auto;font-size: 16px;color: #1B1F23B2;font-weight: 400;max-width: 340px;line-height: 1.4;letter-spacing: 0;}
+.image-text-grid-wrap{min-width: 300px;width:20%;display: inline-block;padding: 0 9px;}
+.image-text-grid-wrap figure{margin: 0;}
+.image-text-grid-wrap h4{font-size: 18px;margin: 0 0 7px;font-weight: 600;color: #1B1F23;letter-spacing: 0;}
+.image-text-grid-wrap p{font-size: 16px;font-weight: 400;color: #1B1F23CC;letter-spacing: 0;margin: 0;line-height: 1.4;}
+.image-text-grid-desc{width: 100%;display: flex;flex-wrap: wrap;justify-content: space-between;padding: 12px 0;}
+.image-text-grid-right{width: 40px;text-align: right;}
+.image-text-grid-left{width: calc(100% - 45px);}
+.image-text-grid-right a{display: inline-block;height: 37px;width: 37px;border: solid 1px #1B1F23;border-radius: 50%;}
 
+@media(max-width:767px){
+  .image-text-grid-section{padding: 40px 0;;}
+  .image-text-grid-title{padding: 0 0 20px;}
+  .image-text-grid-title h3,.image-text-grid-title p,.image-text-grid-wrap p{font-size: 14px;}
+  .image-text-grid-title h2{font-size: 28px;}
+  .image-text-grid-wrap h4{font-size: 16px;margin: 0 0 3px;}
+  .page-width, .page-width-desktop{padding: 0 15px;}
+  .image-text-grid-wrap{padding: 0 12px 0 0;min-width: 260px;}
+  .image-text-grid-desc{padding: 8px 0 0;}
+  .image-text-grid-right a{width: 32px;height: 32px;}
+  .image-text-grid-right a svg{width: 32px;height: auto;}
+}
 

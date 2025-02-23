@@ -1,0 +1,105 @@
+<div class="image-text-grid-section">
+<div class="page-width">
+{% if section.settings.title != blank or section.settings.sub_title != blank or section.settings.desc != blank %}
+<div class="image-text-grid-title">
+{% if section.settings.sub_title != blank %}
+<h3>{{ section.settings.sub_title }}</h3>
+{% endif %}
+{% if section.settings.title != blank %}
+<h2>{{ section.settings.title }}</h2>
+{% endif %}
+{% if section.settings.desc != blank %}
+<p>{{ section.settings.desc }}</p>
+{% endif %}
+</div>
+{% endif %}
+<div class="image-text-grid">
+{% for block in section.blocks %}
+{% if block.settings.image != blank and block.settings.title != blank and block.settings.link != blank %}
+<div class="image-text-grid-wrap">
+<figure><a href="{{ block.settings.link }}"><img src="{{ block.settings.image | img_url: 'master' }}" /></a></figure>
+<div class="image-text-grid-desc">
+<div class="image-text-grid-left">
+<h4>{{ block.settings.title }}</h4>
+{% if block.settings.image != blank %}
+<p>{{ block.settings.sub_title }}</p>
+{% endif %}
+</div>
+<div class="image-text-grid-right">
+<a href="{{ block.settings.link }}"><svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+<g clip-path="url(#clip0_18178_599)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-2.81525 48.9898L-4.30539 48.9847L-4.33045 41.6568L-15.8318 53.0864L-16.8991 52.0258L-5.39918 40.5975L-12.7716 40.5712L-12.7768 39.0903L-4.33899 39.1197L-4.33999 39.1123L-2.84985 39.1174L-2.81525 48.9898Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.9348 21.4127L23.4447 21.4075L23.4196 14.0796L11.9183 25.5093L10.851 24.4486L22.3509 13.0204L14.9785 12.9941L14.9733 11.5132L23.4111 11.5425L23.4101 11.5351L24.9002 11.5403L24.9348 21.4127Z" fill="#1B1F23"/>
+</g>
+<defs>
+<clipPath id="clip0_18178_599">
+<rect width="19.0596" height="33.1036" fill="white" transform="matrix(0.709312 -0.704894 -0.709312 -0.704894 23.4808 37)"/>
+</clipPath>
+</defs>
+</svg></a>
+</div>
+</div>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Image Text Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "desc",
+      "label": "Description"
+    },
+  ],
+  "blocks": [
+    {
+        "type": "Grid",
+        "name": "Grid",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Heading"
+            },
+            {
+                "type": "text",
+                "id": "sub_title",
+                "label": "Description"
+            },
+            {
+                "type": "url",
+                "id": "link",
+                "label": "Link"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Text Grid",
+      "category": "Image Text Grid"
+    }
+  ]
+}
+{% endschema %}
