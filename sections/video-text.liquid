@@ -1,0 +1,54 @@
+<div class="video-text-section">
+<figure>
+{{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true }}
+</figure>
+<div class="video-text">
+<div class="page-width">
+{% if section.settings.title != blank %}
+<h2>{{ section.settings.title }}</h2>
+{% endif %}
+{% if section.settings.btn_link != blank and section.settings.btn_title != blank %}
+<a href="{{ section.settings.btn_link }}">{{ section.settings.btn_title }}</a>
+{% endif %}
+</div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Video Text",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Poster Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "btn_title",
+      "label": "Button Heading"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Text",
+      "category": "Video Text"
+    }
+  ]
+}
+{% endschema %}
