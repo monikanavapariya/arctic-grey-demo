@@ -3652,7 +3652,40 @@ ul.list-menu--inline{align-items: center;}
   .video-text a{font-size: 14px;padding: 8px 30px;}
 }
 
+/***** Text Rotate *****/
+.text-rotate-section{width: 100%;}
+.text-rotate-slider{width: 100%;margin: 0;padding:13px 0;background: #000000;}
+.text-rotate-slider li{display: inline-block;font-size: 14px;font-weight: 500;padding: 0 5px;color: #fff;vertical-align: middle;}
+.text-rotate-slider li svg{margin: 5px 0;}
+.text-rotate-svg{line-height:0;}
 
+/***** Review With Logo` *****/
+.review-with-logo-section{width: 100%;background: #F6F6F5 ;}
+.review-with-logo{width: 100%;display: flex;flex-wrap: wrap;align-items: center;padding: 24px 0;}
+.review-with-logo-left{width: 28%;padding-right: 20px;border-right: solid 1px rgba(0,0,0,0.1);}
+.review-with-logo-right{width: 72%;padding-left: 70px;}
+.review-with-logo-left h4{margin: 0;font-size: 14px;font-weight: 500;color: #1B1F23;border: solid 1px #000000;background: rgba(0,0,0,0.1);display: inline-block;border-radius: 8px;padding: 9px 16px;letter-spacing: 0;}
+.review-with-logo-left h5{letter-spacing: 0;font-size: 16px;font-weight: 400;color: #1B1F23;margin: 11px 0 0;display: flex;align-items: center;}
+.review-with-logo-left h5 svg{margin-right: 1px;}
+.review-with-logo-left h5 span{margin-left: 7px;}
+.review-with-logo-slider{width: 100%;margin: 0;padding: 0;}
+.review-with-logo-slider li{margin: 0;padding: 0 4px;width: 120px;display: inline-block;}
+.review-with-logo-slider li figure{margin: 0;}
+.review-with-logo-slider li figure img{border-radius: 8px;max-width: 100%;}
+
+@media(max-width:1199px){
+  .review-with-logo-left h5 svg{width: 15px;}
+  .review-with-logo-left h5{font-size: 14px;margin: 6px 0 0;}
+  .review-with-logo-left{padding-right: 15px;}
+  .review-with-logo-right{padding-left: 15px;}
+}
+
+@media(max-width:989px){
+  .review-with-logo-left,.review-with-logo-right{width: 100%;text-align: center;border: none;padding: 7px 0;}
+  .review-with-logo-left h5{justify-content: center;}
+  .review-with-logo{padding: 12px 0;}
+  .review-with-logo-section .page-width{padding: 0;}
+}
 
 
 

@@ -1,0 +1,77 @@
+<div class="review-with-logo-section">
+<div class="page-width">
+<div class="review-with-logo">
+<div class="review-with-logo-left">
+{% if section.settings.btn_title != blank %}
+<h4>{{ section.settings.btn_title }}</h4>
+{% endif %}
+{% if section.settings.review_title != blank %}
+<h5>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+<path d="M10.0008 15.217L4.12295 18.5072L5.43573 11.9002L0.490234 7.32683L7.17943 6.53371L10.0008 0.416992L12.8222 6.53371L19.5113 7.32683L14.5659 11.9002L15.8787 18.5072L10.0008 15.217Z" fill="#F5BD41"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+<path d="M10.0008 15.217L4.12295 18.5072L5.43573 11.9002L0.490234 7.32683L7.17943 6.53371L10.0008 0.416992L12.8222 6.53371L19.5113 7.32683L14.5659 11.9002L15.8787 18.5072L10.0008 15.217Z" fill="#F5BD41"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+<path d="M10.0008 15.217L4.12295 18.5072L5.43573 11.9002L0.490234 7.32683L7.17943 6.53371L10.0008 0.416992L12.8222 6.53371L19.5113 7.32683L14.5659 11.9002L15.8787 18.5072L10.0008 15.217Z" fill="#F5BD41"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+<path d="M10.0008 15.217L4.12295 18.5072L5.43573 11.9002L0.490234 7.32683L7.17943 6.53371L10.0008 0.416992L12.8222 6.53371L19.5113 7.32683L14.5659 11.9002L15.8787 18.5072L10.0008 15.217Z" fill="#F5BD41"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+<path d="M10.0008 15.217L4.12295 18.5072L5.43573 11.9002L0.490234 7.32683L7.17943 6.53371L10.0008 0.416992L12.8222 6.53371L19.5113 7.32683L14.5659 11.9002L15.8787 18.5072L10.0008 15.217Z" fill="#F5BD41"/>
+</svg>
+<span>{{ section.settings.review_title }}</span></h5>
+{% endif %}
+</div>
+<div class="review-with-logo-right">
+<ul class="review-with-logo-slider">
+{% for block in section.blocks %}
+{% if block.settings.image != blank %}
+<li><figure><img src="{{ block.settings.image | img_url: 'master' }}" /></figure></li>
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Review With Logo",
+  "settings": [
+    {
+        "type": "text",
+        "id": "btn_title",
+        "label": "Button Heading"
+    },
+    {
+        "type": "text",
+        "id": "review_title",
+        "label": "Review Heading"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "Image",
+        "name": "Image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Review With Logo",
+      "category": "Review With Logo"
+    }
+  ]
+}
+{% endschema %}

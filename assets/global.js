@@ -1267,3 +1267,44 @@ class BulkAdd extends HTMLElement {
 if (!customElements.get('bulk-add')) {
   customElements.define('bulk-add', BulkAdd);
 }
+
+
+$(document).ready(function(){
+  $('.text-rotate-slider').slick({
+    speed: 8000,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: 'linear',
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    infinite: true,
+    variableWidth: true,
+    arrows: false,
+    dots: false,
+  });
+  $('.review-with-logo-slider').slick({
+    speed: 13000,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: 'linear',
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    infinite: true,
+    variableWidth: true,
+    arrows: false,
+    dots: false,
+  });
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
