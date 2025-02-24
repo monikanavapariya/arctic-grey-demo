@@ -1,0 +1,95 @@
+<div class="real-people-result-section">
+<div class="real-people-result-title">
+{% if section.settings.sub_title != blank %}
+<h3>{{ section.settings.sub_title }}</h3>
+{% endif %}
+{% if section.settings.title != blank %}
+<h2>{{ section.settings.title }}</h2>
+{% endif %}
+{% if section.settings.btn_link != blank and section.settings.btn_title != blank %}
+<a href="{{ section.settings.btn_link }}">{{ section.settings.btn_title }}</a>
+{% endif %}
+</div>
+<div class="real-people-result">
+<ul class="real-people-result-slider">
+{% for block in section.blocks %}
+{% if block.settings.image != blank and block.settings.product != blank %}
+{% assign product = all_products[block.settings.product] %}
+<li>
+<div class="real-people-result-wrap">
+<figure class="real-people-result-img"><img src="{{ block.settings.image | img_url: 'master' }}" /></figure>
+<div class="real-people-result-desc">
+<figure><img src="{{ product.featured_image | img_url: 'master' }}" /></figure>
+<div class="real-people-result-text">
+<h4>{{ product.title }}</h4>
+<p>{{ product.price | money }}</p>
+</div>
+<div class="real-people-result-btn">
+
+<a href="#" data-id="{{ product.selected_or_first_available_variant.id }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+<path d="M13.3125 7.75C13.276 8.15104 13.0573 8.36979 12.6562 8.40625H8.28125V12.7812C8.24479 13.1823 8.02604 13.401 7.625 13.4375C7.22396 13.401 7.00521 13.1823 6.96875 12.7812V8.40625H2.59375C2.19271 8.36979 1.97396 8.15104 1.9375 7.75C1.97396 7.34896 2.19271 7.13021 2.59375 7.09375H6.96875V2.71875C7.00521 2.31771 7.22396 2.09896 7.625 2.0625C8.02604 2.09896 8.24479 2.31771 8.28125 2.71875V7.09375H12.6562C13.0573 7.13021 13.276 7.34896 13.3125 7.75Z" fill="white"/>
+</svg></a>
+</div>
+</div>
+</div>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Real People Result",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "btn_title",
+      "label": "Button Heading"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "Image",
+        "name": "Image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "product",
+                "id": "product",
+                "label": "Product"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Real People Result",
+      "category": "Real People Result"
+    }
+  ]
+}
+{% endschema %}
+
