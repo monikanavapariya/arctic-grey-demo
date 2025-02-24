@@ -1,0 +1,238 @@
+
+<div class="protein-powder-section">
+<div class="page-width">
+<div class="protein-powder-title">
+{% if section.settings.sub_title != blank %}
+<h3>{{ section.settings.sub_title }}</h3>
+{% endif %}
+{% if section.settings.title != blank %}
+<h2>{{ section.settings.title }}</h2>
+{% endif %}
+</div>
+<div class="protein-powder">
+<ul class="protein-powder-slider">
+{% for block in section.blocks %}
+{% if block.settings.image != blank %}
+<li>
+<div class="protein-powder-part">
+<figure class="protein-powder-part-fig"><img src="{{ block.settings.image | img_url: 'master' }}" /></figure>
+<div class="protein-powder-wrap">
+<div class="protein-powder-top">
+{% if block.settings.top_title != blank %}
+<h5>{{ block.settings.top_title }}</h5>
+{% endif %}
+<div class="protein-powder-top-icon-list">
+{% if block.settings.top_icon_01 != blank and block.settings.top_icon_title_01 != blank %}
+<div class="protein-powder-top-icon">
+<figure><img src="{{ block.settings.top_icon_01 | img_url: 'master' }}" /></figure>
+<span>{{ block.settings.top_icon_title_01 }}</span>
+</div>
+{% endif %}
+
+{% if block.settings.top_icon_02 != blank and block.settings.top_icon_title_02 != blank %}
+<div class="protein-powder-top-icon">
+<figure><img src="{{ block.settings.top_icon_02 | img_url: 'master' }}" /></figure>
+<span>{{ block.settings.top_icon_title_02 }}</span>
+</div>
+{% endif %}
+
+{% if block.settings.top_icon_03 != blank and block.settings.top_icon_title_03 != blank %}
+<div class="protein-powder-top-icon">
+<figure><img src="{{ block.settings.top_icon_03 | img_url: 'master' }}" /></figure>
+<span>{{ block.settings.top_icon_title_03 }}</span>
+</div>
+{% endif %}
+
+</div>
+</div>
+<div class="protein-powder-bottom">
+{% if block.settings.title != blank %}
+<h5>{{ block.settings.title }}</h5>
+{% endif %}
+
+<div class="protein-powder-bottom-icon-list">
+{% if block.settings.icon_01 != blank and block.settings.icon_title_01 != blank and block.settings.icon_desc_01 != blank %}
+<div class="protein-powder-bottom-icon">
+<figure><img src="{{ block.settings.icon_01 | img_url: 'master' }}" /></figure>
+<h6>{{ block.settings.icon_title_01 }}</h6>
+<p>{{ block.settings.icon_desc_01 }}</p>
+</div>
+{% endif %}
+
+{% if block.settings.icon_02 != blank and block.settings.icon_title_02 != blank and block.settings.icon_desc_02 != blank %}
+<div class="protein-powder-bottom-icon">
+<figure><img src="{{ block.settings.icon_02 | img_url: 'master' }}" /></figure>
+<h6>{{ block.settings.icon_title_02 }}</h6>
+<p>{{ block.settings.icon_desc_02 }}</p>
+</div>
+{% endif %}
+
+{% if block.settings.icon_03 != blank and block.settings.icon_title_03 != blank and block.settings.icon_desc_03 != blank %}
+<div class="protein-powder-bottom-icon">
+<figure><img src="{{ block.settings.icon_03 | img_url: 'master' }}" /></figure>
+<h6>{{ block.settings.icon_title_03 }}</h6>
+<p>{{ block.settings.icon_desc_03 }}</p>
+</div>
+{% endif %}
+
+</div>
+{% if block.settings.btn_link != blank and block.settings.btn_title != blank %}
+<div class="protein-powder-bottom-icon-button">
+<a href="{{ block.settings.btn_link }}">{{ block.settings.btn_title }}</a>
+</div>
+{% endif %}
+</div>
+</div>
+</div>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Protein Powder",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Heading"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "Text",
+        "name": "Text",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "header",
+                "content": "Top Content"
+            },
+            {
+                "type": "text",
+                "id": "top_title",
+                "label": "Heading"
+            },
+            {
+                "type": "image_picker",
+                "id": "top_icon_01",
+                "label": "Icon 01"
+            },
+            {
+                "type": "text",
+                "id": "top_icon_title_01",
+                "label": "Icon Heading 01"
+            },
+            {
+                "type": "image_picker",
+                "id": "top_icon_02",
+                "label": "Icon 02"
+            },
+            {
+                "type": "text",
+                "id": "top_icon_title_02",
+                "label": "Icon Heading 02"
+            },
+            {
+                "type": "image_picker",
+                "id": "top_icon_03",
+                "label": "Icon 03"
+            },
+            {
+                "type": "text",
+                "id": "top_icon_title_03",
+                "label": "Icon Heading 03"
+            },
+            {
+                "type": "header",
+                "content": "Bottom Content"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Heading"
+            },
+            {
+                "type": "image_picker",
+                "id": "icon_01",
+                "label": "Icon 01"
+            },
+            {
+                "type": "text",
+                "id": "icon_title_01",
+                "label": "Icon Heading 01"
+            },
+            {
+                "type": "textarea",
+                "id": "icon_desc_01",
+                "label": "Icon Description 01"
+            },
+            {
+                "type": "image_picker",
+                "id": "icon_02",
+                "label": "Icon 02"
+            },
+            {
+                "type": "text",
+                "id": "icon_title_02",
+                "label": "Icon Heading 02"
+            },
+            {
+                "type": "textarea",
+                "id": "icon_desc_02",
+                "label": "Icon Description 02"
+            },
+            {
+                "type": "image_picker",
+                "id": "icon_03",
+                "label": "Icon 03"
+            },
+            {
+                "type": "text",
+                "id": "icon_title_03",
+                "label": "Icon Heading 03"
+            },
+            {
+                "type": "textarea",
+                "id": "icon_desc_03",
+                "label": "Icon Description 03"
+            },
+            {
+                "type": "text",
+                "id": "btn_title",
+                "label": "Button Heading"
+            },
+            {
+                "type": "url",
+                "id": "btn_link",
+                "label": "Button Link"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Protein Powder",
+      "category": "Protein Powder"
+    }
+  ]
+}
+{% endschema %}

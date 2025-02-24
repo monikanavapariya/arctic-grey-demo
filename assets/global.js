@@ -1366,6 +1366,15 @@ $('cart-drawer').addClass('active');
     });
   });
 
+  $('.protein-powder-slider').slick({
+    slidesToShow: 1,  // Make sure the middle slide is visible
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: true,
+    dots: false,
+    prevArrow:arrow_left,
+    nextArrow:arrow_right,
+  });
 
 })
 
