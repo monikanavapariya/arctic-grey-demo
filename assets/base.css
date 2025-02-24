@@ -3718,3 +3718,30 @@ ul.list-menu--inline{align-items: center;}
   .image-text-grid-right a svg{width: 32px;height: auto;}
 }
 
+/***** Icon Text *****/
+.icon-text-section{width: 100%;padding: 80px 0 ;}
+.icon-text-title{width: 100%;padding: 0 0 40px;}
+.icon-text-title h3{margin: 0 0 7px;font-size: 16px;color: #1B1F23;font-weight: 400;letter-spacing: 0;}
+.icon-text-title h2{margin: 0;font-size: 40px;font-weight: 500;color: #1B1F23;letter-spacing: 0;max-width: 400px;line-height: 1.2;}
+.icon-text{width: 100%;display: flex;flex-wrap: nowrap;overflow: hidden;overflow-x: auto;}
+.icon-text-wrap{min-width: 375px;width: 25px;padding: 0 20px 0 0;}
+.icon-text-wrap figure{margin: 0 0 20px;height: 50px;width: 50px;border-radius: 50%;background: #1B1F23;padding: 13px;}
+.icon-text-wrap h4{font-size: 18px;font-weight: 500;margin: 0 0 12px;letter-spacing: 0;}
+.icon-text-wrap p{font-size: 16px;font-weight: 400;letter-spacing: 0;margin: 0;line-height: 1.5;}
+
+@media(max-width:767px){
+  .icon-text-section{padding: 40px 0;}
+  .icon-text-title h2{font-size: 28px;}
+  .icon-text-title h3{font-size: 14px;}
+  .icon-text-wrap h4{font-size: 16px;margin: 0 0 8px;}
+  .icon-text-wrap figure{margin: 0 0 12px;}
+  .icon-text-wrap p{font-size: 14px;}
+  .icon-text-title{padding: 0 0 20px;}
+  .icon-text-wrap figure{height: 40px;width: 40px;padding: 9px 10px;}
+  .icon-text-wrap{min-width: 270px;}
+}
+
+
+
+
+
