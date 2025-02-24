@@ -1,0 +1,41 @@
+{% if section.blocks.size > 0 %}
+<div class="instagram-section">
+<div class="page-width">
+<div class="instagram-part">
+{% for block in section.blocks %}
+{% if block.settings.image != blank %}
+<div class="instagram-wrap">
+<figure><img src="{{ block.settings.image | img_url: 'master' }}" /></figure>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Instagram",
+  "settings": [],
+  "blocks": [
+    {
+        "type": "Image",
+        "name": "Image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram",
+      "category": "Instagram"
+    }
+  ]
+}
+{% endschema %}

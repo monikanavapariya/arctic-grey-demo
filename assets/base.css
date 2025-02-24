@@ -3924,10 +3924,17 @@ ul.list-menu--inline{align-items: center;}
   .latest-article-section{padding: 40px 0;}
 }
 
+.instagram-section{width: 100%;padding: 0 0 80px;}
+.instagram-part{width: 100%;display: flex;gap: 10px;flex-wrap: wrap;}
+.instagram-wrap{width: calc(16.6666% - 9px);line-height: 0;}
+.instagram-wrap:first-child{width: calc(33.3333% - 9px);}
+.instagram-wrap figure{margin: 0;}
+.instagram-wrap figure img{width: 100%;}
 
-
-
-
-
+@media(max-width:989px){
+  .instagram-section{padding: 0 0 40px;}
+  .instagram-wrap{width: calc(33.3333% - 9px);}
+  .instagram-wrap:first-child{width: calc(66.6666% - 9px);}
+}
 
 
