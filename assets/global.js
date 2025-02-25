@@ -1376,6 +1376,16 @@ $('cart-drawer').addClass('active');
     nextArrow:arrow_right,
   });
 
+  $('.footer-block__heading').on('click', function(e){
+    e.preventDefault();
+    if($(this).parents('.footer-block').hasClass('active')){
+      $(this).parents('.footer-block').removeClass('active');
+    }else{
+      $('.footer-block').removeClass('active');
+      $(this).parents('.footer-block').addClass('active');
+    }
+  })
+
 })
 
 

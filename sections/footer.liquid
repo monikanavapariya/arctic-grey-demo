@@ -68,7 +68,7 @@
           >
             {%- for block in section.blocks -%}
               <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="footer-block grid__item{% if block.type == 'link_list' or  block.type == 'text' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -76,15 +76,138 @@
                 {% endif %}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="none">
+<path d="M7.59821 0.182292L12.3125 4.55729C12.4375 4.67882 12.5 4.82639 12.5 5C12.5 5.17361 12.4375 5.32118 12.3125 5.44271L7.59821 9.81771C7.27679 10.0608 6.97321 10.0608 6.6875 9.81771C6.4375 9.50521 6.4375 9.21007 6.6875 8.93229L10.25 5.625H1.14286C0.75 5.59028 0.535714 5.38194 0.5 5C0.535714 4.61806 0.75 4.40972 1.14286 4.375H10.25L6.6875 1.06771C6.4375 0.789931 6.4375 0.494792 6.6875 0.182292C6.97321 -0.0607639 7.27679 -0.0607639 7.59821 0.182292Z" fill="#1B1F23"/>
+</svg></span>
+                  </h2>
                 {%- endif -%}
 
                 {%- case block.type -%}
                   {%- when '@app' -%}
                     {% render block %}
+                  {%- when 'Newsletter' %}
+                  <div class="footer-block__newsletter">
+                <h2 class="footer-block__heading inline-richtext">Be a Part of Our Journey</h2>
+                <p>Welcome to UNCMFRT. Sign up for exclusive content and we'll send you 10% off.</p>
+              {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="newsletter-form__field-wrapper">
+                    <input
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class=""
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+                      {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                        aria-describedby="ContactFooter-error"
+                      {% elsif form.posted_successfully? %}
+                        aria-describedby="ContactFooter-success"
+                      {% endif %}
+                      placeholder="Email Address"
+                      required
+                    >
+                    
+                    <button
+                      type="submit"
+                      class="newsletter-form__button field__button"
+                      name="commit"
+                      id="Subscribe"
+                      aria-label="{{ 'newsletter.button_label' | t }}"
+                    >
+                      <span class="svg-wrapper">
+                       Subscribe
+                      </span>
+                    </button>
+                  {%- if form.errors -%}
+                    <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                      <span class="svg-wrapper">
+                        {{- 'icon-error.svg' | inline_asset_content -}}
+                      </span>
+                      {{- form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email -}}
+                    </small>
+                  {%- endif -%}
+                </div>
+                {%- if form.posted_successfully? -%}
+                  <h3
+                    class="newsletter-form__message newsletter-form__message--success form__message"
+                    id="ContactFooter-success"
+                    tabindex="-1"
+                    autofocus
+                  >
+                    <span class="svg-wrapper">
+                      {{- 'icon-success.svg' | inline_asset_content -}}
+                    </span>
+                    {{- 'newsletter.success' | t }}
+                  </h3>
+                {%- endif -%}
+              {%- endform -%}
+            </div>
                   {%- when 'text' -%}
                     <div class="footer-block__details-content rte">
                       {{ block.settings.subtext }}
+                      <h5>Connect With Us</h5>
+                       <ul class="footer-social-ul">
+                       {%- if settings.social_instagram_link != blank -%}
+    <li>
+      <a href="{{ settings.social_instagram_link }}">
+        <span class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.0009 0C7.28508 0 6.94424 0.011875 5.87756 0.0604167C4.81297 0.109167 4.08629 0.277708 3.45045 0.525C2.79274 0.780417 2.23482 1.12208 1.67898 1.67813C1.12272 2.23396 0.78105 2.79188 0.524797 3.44938C0.276878 4.08542 0.108126 4.81229 0.060209 5.87646C0.0125001 6.94313 0 7.28417 0 10C0 12.7158 0.0120835 13.0556 0.0604173 14.1223C0.109376 15.1869 0.27792 15.9135 0.525006 16.5494C0.780633 17.2071 1.1223 17.765 1.67835 18.3208C2.23398 18.8771 2.7919 19.2196 3.4492 19.475C4.08546 19.7223 4.81234 19.8908 5.87673 19.9396C6.94341 19.9881 7.28403 20 9.99969 20C12.7158 20 13.0556 19.9881 14.1222 19.9396C15.1868 19.8908 15.9143 19.7223 16.5506 19.475C17.2081 19.2196 17.7652 18.8771 18.3208 18.3208C18.8771 17.765 19.2187 17.2071 19.475 16.5496C19.7208 15.9135 19.8896 15.1867 19.9396 14.1225C19.9875 13.0558 20 12.7158 20 10C20 7.28417 19.9875 6.94333 19.9396 5.87667C19.8896 4.81208 19.7208 4.08542 19.475 3.44958C19.2187 2.79188 18.8771 2.23396 18.3208 1.67813C17.7646 1.12188 17.2083 0.780208 16.55 0.525C15.9125 0.277708 15.1854 0.109167 14.1208 0.0604167C13.0541 0.011875 12.7145 0 9.99781 0H10.0009ZM9.10309 1.8023C9.36934 1.80189 9.66643 1.8023 10.0002 1.8023C12.6702 1.8023 12.9867 1.81189 14.0411 1.8598C15.0161 1.90439 15.5452 2.0673 15.8977 2.20418C16.3644 2.38543 16.6971 2.6021 17.0469 2.9521C17.3969 3.3021 17.6136 3.63543 17.7953 4.1021C17.9321 4.45418 18.0953 4.98335 18.1396 5.95835C18.1876 7.01251 18.198 7.32918 18.198 9.99793C18.198 12.6667 18.1876 12.9833 18.1396 14.0375C18.0951 15.0125 17.9321 15.5417 17.7953 15.8938C17.614 16.3604 17.3969 16.6927 17.0469 17.0425C16.6969 17.3925 16.3646 17.6092 15.8977 17.7904C15.5457 17.9279 15.0161 18.0904 14.0411 18.135C12.9869 18.1829 12.6702 18.1933 10.0002 18.1933C7.32995 18.1933 7.01349 18.1829 5.95931 18.135C4.9843 18.09 4.45513 17.9271 4.10241 17.7902C3.63574 17.609 3.30241 17.3923 2.9524 17.0423C2.6024 16.6923 2.38573 16.3598 2.20406 15.8929C2.06719 15.5408 1.90406 15.0117 1.85968 14.0367C1.81177 12.9825 1.80218 12.6658 1.80218 9.99543C1.80218 7.32501 1.81177 7.01001 1.85968 5.95585C1.90427 4.98085 2.06719 4.45168 2.20406 4.09918C2.38531 3.63251 2.6024 3.29918 2.9524 2.94918C3.30241 2.59918 3.63574 2.38251 4.10241 2.20085C4.45492 2.06335 4.9843 1.90085 5.95931 1.85605C6.88182 1.81439 7.23932 1.80189 9.10309 1.7998V1.8023ZM15.3382 3.46233C14.6757 3.46233 14.1382 3.99921 14.1382 4.66191C14.1382 5.32441 14.6757 5.86191 15.3382 5.86191C16.0007 5.86191 16.5382 5.32441 16.5382 4.66191C16.5382 3.99941 16.0007 3.46191 15.3382 3.46191V3.46233ZM9.99973 4.86475C7.16366 4.86475 4.86426 7.16412 4.86426 10.0002C4.86426 12.8362 7.16366 15.1345 9.99973 15.1345C12.8358 15.1345 15.1344 12.8362 15.1344 10.0002C15.1344 7.16412 12.8356 4.86475 9.99952 4.86475H9.99973ZM10.0005 6.66699C11.8414 6.66699 13.3339 8.15928 13.3339 10.0003C13.3339 11.8412 11.8414 13.3337 10.0005 13.3337C8.15947 13.3337 6.66716 11.8412 6.66716 10.0003C6.66716 8.15928 8.15947 6.66699 10.0005 6.66699Z" fill="black"/>
+</svg>
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_twitter_link != blank -%}
+    <li>
+      <a href="{{ settings.social_twitter_link }}">
+        <span class="svg-wrapper">
+         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5163 3.72485C16.5232 3.887 16.5278 4.04915 16.5278 4.2136C16.5278 9.20115 12.7305 14.9534 5.7868 14.9534C3.6547 14.9534 1.67095 14.329 0 13.2583C0.29555 13.2928 0.5957 13.3101 0.90045 13.3101C2.66915 13.3101 4.2964 12.7075 5.589 11.6943C3.93645 11.6644 2.54265 10.5731 2.06195 9.0735C2.2931 9.1172 2.52885 9.1402 2.77265 9.1402C3.1165 9.1402 3.45 9.0942 3.7674 9.00795C2.0401 8.6618 0.73945 7.13575 0.73945 5.30725C0.73945 5.29115 0.73945 5.27505 0.73945 5.25895C1.24775 5.54185 1.8308 5.71205 2.4495 5.7316C1.43635 5.05425 0.76935 3.8985 0.76935 2.5898C0.76935 1.8975 0.95565 1.2489 1.2811 0.69115C3.14295 2.97505 5.9248 4.4781 9.062 4.63565C8.9976 4.35965 8.96425 4.071 8.96425 3.77545C8.96425 1.6905 10.6547 0 12.7385 0C13.8253 0 14.8062 0.45885 15.4939 1.19255C16.3541 1.0235 17.1626 0.70955 17.8917 0.27715C17.6099 1.15805 17.0108 1.8975 16.2322 2.36555C16.9958 2.27355 17.7226 2.07115 18.4 1.771C17.894 2.5277 17.2534 3.1924 16.5163 3.72485Z" fill="black"/>
+</svg>
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+                       {%- if settings.social_facebook_link != blank -%}
+    <li>
+      <a href="{{ settings.social_facebook_link }}">
+        <span class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="19" viewBox="0 0 10 19" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.95525 3.0544L8.22335 3.05555C6.8652 3.05555 6.60185 3.7007 6.60185 4.64715V6.73555H9.8414L9.41935 10.0073H6.60185V18.4H3.2243V10.0073H0.399902V6.73555H3.2243V4.324C3.2243 1.52375 4.93435 0 7.431 0C8.627 0 9.6551 0.08855 9.95525 0.1288V3.0544Z" fill="black"/>
+</svg>
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  
+  {%- if settings.social_youtube_link != blank -%}
+    <li>
+      <a href="{{ settings.social_youtube_link }}">
+        <span class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none">
+<rect x="0.955078" width="21.0286" height="15.7051" rx="3" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3386 8.11108C14.4828 8.18563 14.4828 8.39184 14.3386 8.46639L9.1328 11.158C8.99967 11.2269 8.84094 11.1302 8.84094 10.9804V5.5971C8.84094 5.44723 8.99967 5.35061 9.1328 5.41944L14.3386 8.11108Z" fill="white"/>
+</svg>
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  
+                       </ul>
+                    
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
@@ -299,23 +422,19 @@
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
-        <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
-        </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
-        {%- if section.settings.show_policy -%}
-          <ul class="policies list-unstyled">
-            {%- for policy in shop.policies -%}
-              {%- if policy != blank -%}
-                <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
-                  >
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
+      <p>© uncmfrt.com. All right reserved.</p>
+      <p class="footer-right-copyright">Made with <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+<path d="M10.7875 1.79465C10.4659 1.47074 10.0834 1.21359 9.662 1.038C9.24064 0.862408 8.78873 0.771834 8.33225 0.771484C7.46882 0.771626 6.63691 1.09598 6.00125 1.68032C5.36565 1.09588 4.53371 0.771512 3.67025 0.771484C3.21323 0.77196 2.76082 0.862811 2.33905 1.03881C1.91728 1.2148 1.53447 1.47247 1.21267 1.79698C-0.159917 3.1754 -0.159333 5.3314 1.21383 6.70398L6.00125 11.4914L10.7887 6.70398C12.1618 5.3314 12.1624 3.1754 10.7875 1.79465Z" fill="#1B1F23"/>
+</svg> and <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+<g clip-path="url(#clip0_10435_4609)">
+<path d="M2.91797 1.75H11.668C11.9774 1.75 12.2741 1.87292 12.4929 2.09171C12.7117 2.3105 12.8346 2.60725 12.8346 2.91667V4.66667C12.8346 4.97609 12.7117 5.27283 12.4929 5.49162C12.2741 5.71042 11.9774 5.83333 11.668 5.83333H10.5013V7.58333C10.5013 8.20217 10.2555 8.79566 9.81788 9.23325C9.3803 9.67083 8.78681 9.91667 8.16797 9.91667H4.66797C4.04913 9.91667 3.45564 9.67083 3.01805 9.23325C2.58047 8.79566 2.33464 8.20217 2.33464 7.58333V2.33333C2.33464 2.17862 2.39609 2.03025 2.50549 1.92085C2.61489 1.81146 2.76326 1.75 2.91797 1.75ZM10.5013 2.91667V4.66667H11.668V2.91667H10.5013ZM1.16797 11.0833H11.668V12.25H1.16797V11.0833Z" fill="#1B1F23"/>
+</g>
+<defs>
+<clipPath id="clip0_10435_4609">
+<rect width="14" height="14" fill="white"/>
+</clipPath>
+</defs>
+</svg> by Arctic Grey</p>
       </div>
     </div>
   </div>
@@ -426,6 +545,11 @@
           "default": "center"
         }
       ]
+    },
+    {
+      "type": "Newsletter",
+      "name": "Newsletter",
+      "settings": []
     }
   ],
   "settings": [
