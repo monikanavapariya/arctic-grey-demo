@@ -1748,9 +1748,12 @@ class SellingPlansWidget {
   }
 }
 
-$('.selling_plan_theme_integration label').on('click', function(){
+$(document).on('click','.selling_plan_theme_integration label', function(){
   var selling_id = $(this).parents('.data-prod-grid-sub-wrap').find('input').attr('data-selling-plan-id');
-  $(this).parents('form').find('.selected-selling-plan-id').val(selling_id)
+  $(this).parents('form').find('.selected-selling-plan-id').val(selling_id);
+  var popup_selling_id = $(this).parents('.data-prod-grid-sub-wrap').find('input').attr('data-selling-plan-id');
+  $(this).parents('.product__info-wrapper').find('.selected-selling-plan-id').val(popup_selling_id);
+  console.log('mainn iff',popup_selling_id)
 })
 
 

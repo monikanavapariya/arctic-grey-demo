@@ -3996,7 +3996,7 @@ footer{background: #F6F6F5 !important;border: none !important;}
 
 
 /***** Trending Product *****/
-.card-prod-selling-part{position: absolute;width: 100%;top: 0;left: 0;background: #fff;z-index: 9999;padding: 10px;height: 130%;display: none;}
+.card-prod-selling-part{position: absolute;width: 100%;top: -2%;left: 0;background: #fff;z-index: 9999;padding: 10px;height: 130%;display: none;}
 .card__content{position: relative;}
 .card__content form,.card__content product-form,.card__content .quick-add{position: unset;}
 .data-prod-grid-sub-wrap input{display: none;}
@@ -4032,6 +4032,7 @@ footer{background: #F6F6F5 !important;border: none !important;}
 .data-prod-grid-sub-wrap label::before{display: none;}
 .data-prod-grid-sub-wrap input:checked+label::before{display: block;}
 .quick-add modal-opener,.card__content quick-add-modal{display: none;}
+.card .card__inner .card__media{z-index: 9 !important;}
  
 .trending-collection-section{width: 100%;background: #F6F6F5;padding: 80px 0;}
 .trending-collection{width: 100%;}
@@ -4101,10 +4102,18 @@ footer{background: #F6F6F5 !important;border: none !important;}
   .featured-bundle-slider li,.trending-collection-slider li{padding: 0;}
 }
 
+/***** Quickview *****/
+quick-add-modal .product__title h1,.product__title h2{font-size: 28px;letter-spacing: 0;}
+quick-add-modal .product__text{font-size: 14px;letter-spacing: 0;text-transform: capitalize !important;}
+quick-add-modal .price__regular .price-item--regular{font-size: 14px;letter-spacing: 0;}
+.product__info-wrapper .product-form__submit{margin-top: 15px;font-size: 14px;font-weight: 500;color: #fff;background: #1B1F23;border-radius: 8px;margin-bottom: 10px;letter-spacing: 0;}
+.product__info-wrapper .product-form__submit::after,.product__info-wrapper .product-form__submit::before{display: none;letter-spacing: 0;}
+.product__info-wrapper .shopify-payment-button{display: none !important;}
 
-
-
-
+@media(max-width:575px){
+  quick-add-modal .data-prod-grid-sub-wrap{width: 100%;margin: 0 0 10px;}
+  quick-add-modal .product__title h1, .product__title h2{font-size: 20px;}
+}
 
 
 
