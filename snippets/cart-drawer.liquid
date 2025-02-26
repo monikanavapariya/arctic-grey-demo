@@ -62,7 +62,7 @@
         </div>
       {%- endif -%}
       <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
+        <h2 class="drawer__heading">Your Bag <span>1</span></h2>
         <button
           class="drawer__close"
           type="button"
@@ -70,7 +70,16 @@
           aria-label="{{ 'accessibility.close' | t }}"
         >
           <span class="svg-wrapper">
-            {{- 'icon-close.svg' | inline_asset_content -}}
+           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+<g clip-path="url(#clip0_10435_5635)">
+<path d="M8.87423 8.01266L14.7149 2.17178C15.095 1.79185 15.095 1.17756 14.7149 0.797639C14.335 0.417714 13.7207 0.417714 13.3408 0.797639L7.49992 6.63852L1.65921 0.797639C1.27911 0.417714 0.665002 0.417714 0.285077 0.797639C-0.0950257 1.17756 -0.0950257 1.79185 0.285077 2.17178L6.12578 8.01266L0.285077 13.8535C-0.0950257 14.2335 -0.0950257 14.8477 0.285077 15.2277C0.474417 15.4172 0.72337 15.5124 0.972145 15.5124C1.22092 15.5124 1.4697 15.4172 1.65921 15.2277L7.49992 9.38679L13.3408 15.2277C13.5303 15.4172 13.7791 15.5124 14.0279 15.5124C14.2766 15.5124 14.5254 15.4172 14.7149 15.2277C15.095 14.8477 15.095 14.2335 14.7149 13.8535L8.87423 8.01266Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_10435_5635">
+<rect width="15" height="15" fill="white" transform="translate(0 0.5)"/>
+</clipPath>
+</defs>
+</svg>
           </span>
         </button>
       </div>
@@ -88,33 +97,29 @@
           <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
             {%- if cart != empty -%}
               <div class="drawer__cart-items-wrapper">
+              {% if settings.shipping_price != blank %}
+              <div class="cart-drawer-shipping-bar-section">
+              {% assign ship_p = settings.shipping_price | times: 1 %}
+              
+              {% if cart.total_price < ship_p %}
+              {% assign ship_cal_p = cart.total_price | divided_by: 100 %}
+              {% assign total_cart_p = settings.shipping_price | minus:cart.total_price %}
+              <p>You are <span>{{ total_cart_p | money }}</span> away from eligible for free shipping</p>
+              {% else %}
+              {% assign ship_cal_p = 100 %}
+              <p>Congratulations! You are eligible for free shipping</p>
+              {% endif %}
+              <div class="cart-drawer-shipping-bar">
+              <span class="left-price-shipping-bar">$0</span>
+              <span class="price-shipping-bar">
+              <span class="price-shipping-bar-fill" style="width:{{ ship_cal_p }}%;"></span>
+              </span>
+              <span class="right-price-shipping-bar">{{ settings.shipping_price | money | remove: '.00' }}</span>
+              </div>
+              </div>
+              {% endif %}
                 <table class="cart-items" role="table">
-                  <thead role="rowgroup">
-                    <tr role="row">
-                      <th id="CartDrawer-ColumnProductImage" role="columnheader">
-                        <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
-                      </th>
-                      <th
-                        id="CartDrawer-ColumnProduct"
-                        class="caption-with-letter-spacing"
-                        scope="col"
-                        role="columnheader"
-                      >
-                        {{ 'sections.cart.headings.product' | t }}
-                      </th>
-                      <th
-                        id="CartDrawer-ColumnTotal"
-                        class="right caption-with-letter-spacing"
-                        scope="col"
-                        role="columnheader"
-                      >
-                        {{ 'sections.cart.headings.total' | t }}
-                      </th>
-                      <th id="CartDrawer-ColumnQuantity" role="columnheader">
-                        <span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span>
-                      </th>
-                    </tr>
-                  </thead>
+                
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
@@ -143,26 +148,6 @@
                             {{- item.product.title | escape -}}
                           </a>
 
-                          {%- if item.original_price != item.final_price -%}
-                            <div class="cart-item__discounted-prices">
-                              <span class="visually-hidden">
-                                {{ 'products.product.price.regular_price' | t }}
-                              </span>
-                              <s class="cart-item__old-price product-option">
-                                {{- item.original_price | money -}}
-                              </s>
-                              <span class="visually-hidden">
-                                {{ 'products.product.price.sale_price' | t }}
-                              </span>
-                              <strong class="cart-item__final-price product-option">
-                                {{ item.final_price | money }}
-                              </strong>
-                            </div>
-                          {%- else -%}
-                            <div class="product-option">
-                              {{ item.original_price | money }}
-                            </div>
-                          {%- endif -%}
 
                           {%- if item.product.has_only_default_variant == false
                             or item.properties.size != 0
@@ -205,8 +190,8 @@
                               {%- endfor -%}
                             </dl>
 
-                            <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
-                          {%- endif -%}
+                            
+                             {%- endif -%}
 
                           <ul
                             class="discounts list-unstyled"
@@ -343,6 +328,8 @@
                                 </button>
                               </cart-remove-button>
                             </div>
+
+                              
                             {%- if has_qty_rules or has_vol_pricing -%}
                               <button
                                 type="button"
@@ -428,22 +415,23 @@
                                 {%- endif -%}
                               </div>
                             {%- endif -%}
-                            <div
-                              id="CartDrawer-LineItemError-{{ item.index | plus: 1 }}"
-                              class="cart-item__error"
-                              role="alert"
-                            >
-                              <small class="cart-item__error-text"></small>
-                              <span class="svg-wrapper">
-                                {{- 'icon-error.svg' | inline_asset_content -}}
-                              </span>
-                            </div>
+                             {%- if item.product.has_only_default_variant == false
+                            or item.properties.size != 0
+                            or item.selling_plan_allocation != null
+                          -%}
+                             <p class="product-option cart-selling-price">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                      {%- endif -%}
                           </quantity-popover>
-                        </td>
+
+                           
+                          
+                         </td>
                       </tr>
                     {%- endfor -%}
                   </tbody>
                 </table>
+
+                
               </div>
             {%- endif -%}
             <p id="CartDrawer-LiveRegionText" class="visually-hidden" role="status"></p>
@@ -453,7 +441,26 @@
           </div>
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
+        <div class="cart-collection-prod-list-section">
+                <h2>Enhance Your Performance</h2>
+                <ul class="cart-collection-prod-list-slider">
+                {%- for product in settings.cart_drawer_collection.products -%}
+                <li>
+                {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              skip_styles: skip_card_product_styles,
+              section_id: section.id,
+              quick_add: section.settings.quick_add
+            %}
+                </li>
+                {%- endfor -%}
+                </ul>
+                </div>
       </cart-drawer-items>
+      
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
@@ -494,48 +501,12 @@
           </div>
 
           <div class="totals" role="status">
-            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+            <h2 class="totals__total">Subtotal</h2>
+            <p class="totals__total-value">{{ cart.total_price | money }}</p>
           </div>
 
           <small class="tax-note caption-large rte">
-            {%- if cart.duties_included and cart.taxes_included -%}
-              {%- if shop.shipping_policy.body == blank -%}
-                {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
-              {%- else -%}
-                {{
-                  'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
-                  | t: link: shop.shipping_policy.url
-                }}
-              {%- endif -%}
-            {%- elsif cart.duties_included == false and cart.taxes_included -%}
-              {%- if shop.shipping_policy.body == blank -%}
-                {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
-              {%- else -%}
-                {{
-                  'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
-                  | t: link: shop.shipping_policy.url
-                }}
-              {%- endif -%}
-            {%- elsif cart.duties_included and cart.taxes_included == false -%}
-              {%- if shop.shipping_policy.body == blank -%}
-                {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
-              {%- else -%}
-                {{
-                  'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html'
-                  | t: link: shop.shipping_policy.url
-                }}
-              {%- endif -%}
-            {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
-              {%- if shop.shipping_policy.body == blank -%}
-                {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
-              {%- else -%}
-                {{
-                  'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html'
-                  | t: link: shop.shipping_policy.url
-                }}
-              {%- endif -%}
-            {%- endif -%}
+            <p>Tax included. Shipping calculated at checkout.</p>
           </small>
         </div>
 

@@ -1400,6 +1400,10 @@ $(document).ready(function(){
     ]
   });
 
+  
+
+  
+
   $('.featured-bundle-title-ul ul li').on('click', function(e){
     e.preventDefault();
     var data_id = $(this).attr('data-id');
