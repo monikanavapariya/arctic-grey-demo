@@ -24,21 +24,38 @@
   <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<div class="trending-collection-section">
+<div class="featured-bundle-section">
 <div class="page-width">
-<div class="trending-collection-title">
+<div class="featured-bundle-title">
+<div class="featured-bundle-title-wrap">
 {% if section.settings.sub_title != blank %}
 <h3>{{ section.settings.sub_title }}</h3>
 {% endif %}
 {% if section.settings.title != blank %}
 <h2>{{ section.settings.title }}</h2>
 {% endif %}
-<a href="{{ collections[section.settings.collection].url }}">View All</a>
 </div>
-<div class="trending-collection">
-<ul class="trending-collection-slider">
-{%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-<li>
+<div class="featured-bundle-title-ul">
+<ul>
+{% for block in section.blocks %}
+{% if block.settings.collection != blank %}
+<li class="{% if forloop.index == 1 %}active{% endif %}" data-id="{{ collections[block.settings.collection].title | handle }}">{{ collections[block.settings.collection].title }}</li>
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+<div class="featured-bundle-title-link">
+{% if section.settings.btn_title != blank and section.settings.btn_link != blank %}
+<a href="{{ section.settings.btn_link }}">{{ section.settings.btn_title }}</a>
+{% endif %}
+</div>
+</div>
+<div class="featured-bundle">
+<ul class="featured-bundle-slider">
+{% for block in section.blocks %}
+{% if block.settings.collection != blank %}
+{%- for product in block.settings.collection.products -%}
+<li class="all {{ collections[block.settings.collection].title | handle }}">
 {% render 'card-product',
               card_product: product,
               media_aspect_ratio: section.settings.image_ratio,
@@ -50,6 +67,9 @@
             %}
 </li>
 {% endfor %}
+{% endif %}
+
+{% endfor %}
 </ul>
 </div>
 </div>
@@ -58,7 +78,7 @@
 
 {% schema %}
 {
-  "name": "Trending Collection",
+  "name": "Featured Bundle",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -76,9 +96,14 @@
       "label": "Sub Heading"
     },
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "t:sections.featured-collection.settings.collection.label"
+      "type": "text",
+      "id": "btn_title",
+      "label": "Button Heading"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
     },
     {
       "type": "header",
@@ -173,9 +198,22 @@
       ]
     }
   ],
+  "blocks": [
+    {
+        "type": "Collection",
+        "name": "Collection",
+        "settings": [
+            {
+               "type": "collection",
+               "id": "collection",
+               "label": "Collection"
+            }
+        ]
+    }
+  ],
   "presets": [
     {
-      "name": "Trending Collection"
+      "name": "Featured Bundle"
     }
   ]
 }

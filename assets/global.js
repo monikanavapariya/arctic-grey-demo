@@ -1363,6 +1363,57 @@ $(document).ready(function(){
     ]
   });
 
+
+  $('.featured-bundle-slider').slick({
+    slidesToShow: 4,  // Make sure the middle slide is visible
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: true,
+    dots: false,
+    prevArrow:arrow_left,
+    nextArrow:arrow_right,
+    responsive: [
+      {
+        breakpoint: 1350,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  });
+
+  $('.featured-bundle-title-ul ul li').on('click', function(e){
+    e.preventDefault();
+    var data_id = $(this).attr('data-id');
+    $('.featured-bundle-title-ul ul li').removeClass('active');
+    $(this).addClass('active');
+    $(".featured-bundle-slider").slick('slickUnfilter');
+      $(".featured-bundle-slider").slick('slickFilter','.'+data_id);
+  })
+
+  var data_id = $('.featured-bundle-title-ul ul li.active').attr('data-id');
+    $(".featured-bundle-slider").slick('slickUnfilter');
+      $(".featured-bundle-slider").slick('slickFilter','.'+data_id);
+
+
   $('.real-people-result-slider li').removeClass('active-slide'); // Remove from all slides
     $('.slick-center').addClass('active-slide'); // Add to the center slide
 
