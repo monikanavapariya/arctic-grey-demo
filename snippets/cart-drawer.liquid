@@ -54,11 +54,7 @@
               {%- endif -%}
             </div>
           </div>
-          {%- if settings.cart_drawer_collection != blank -%}
-            <div class="cart-drawer__collection">
-              {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %}
-            </div>
-          {%- endif -%}
+          
         </div>
       {%- endif -%}
       <div class="drawer__header">
@@ -441,6 +437,7 @@
           </div>
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
+        {%- if cart != empty -%}
         <div class="cart-collection-prod-list-section">
                 <h2>Enhance Your Performance</h2>
                 <ul class="cart-collection-prod-list-slider">
@@ -459,6 +456,7 @@
                 {%- endfor -%}
                 </ul>
                 </div>
+                {% endif %}
       </cart-drawer-items>
       
       <div class="drawer__footer">

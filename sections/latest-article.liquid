@@ -17,6 +17,7 @@
 {% if block.settings.article != blank %}
 {% if forloop.index == 1 %}
 <div class="latest-article-left">
+<a href="{{ article.url }}" style="display:block;width:100%;height:100%;position:absolute;top:0;left:0;"></a>
 <figure><img src="{{ article.image | img_url: 'master' }}" /></figure>
 <div class="latest-article-left-desc">
 <h4>{{ article.tags }}</h4>
@@ -29,6 +30,7 @@
 <div class="latest-article-right">
 {% endif %}
 <div class="latest-article-part">
+<a href="{{ article.url }}" style="display:block;width:100%;height:100%;position:absolute;top:0;left:0;"></a>
 <div class="latest-article-part-left">
 <figure><img src="{{ article.image | img_url: 'master' }}" /></figure>
 </div>
