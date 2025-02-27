@@ -14,39 +14,39 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "newsletter_wQwrRi": {
+        "newsletter_QytLNq": {
           "type": "Newsletter",
           "settings": {}
         },
-        "link_list_KJLNkf": {
+        "link_list_qH4KMt": {
           "type": "link_list",
           "settings": {
             "heading": "About Us",
             "menu": "about-us"
           }
         },
-        "link_list_GdiNV8": {
+        "link_list_r9TdWU": {
           "type": "link_list",
           "settings": {
             "heading": "Support",
             "menu": "support"
           }
         },
-        "link_list_grYRh3": {
+        "link_list_j4znqh": {
           "type": "link_list",
           "settings": {
             "heading": "Important Link",
             "menu": "important-link"
           }
         },
-        "link_list_hkNyt7": {
+        "link_list_NpDdiF": {
           "type": "link_list",
           "settings": {
             "heading": "Legal",
             "menu": "legal"
           }
         },
-        "text_7ebQm3": {
+        "text_pD4kVh": {
           "type": "text",
           "settings": {
             "heading": "Contact Us",
@@ -55,12 +55,12 @@
         }
       },
       "block_order": [
-        "newsletter_wQwrRi",
-        "link_list_KJLNkf",
-        "link_list_GdiNV8",
-        "link_list_grYRh3",
-        "link_list_hkNyt7",
-        "text_7ebQm3"
+        "newsletter_QytLNq",
+        "link_list_qH4KMt",
+        "link_list_r9TdWU",
+        "link_list_j4znqh",
+        "link_list_NpDdiF",
+        "text_pD4kVh"
       ],
       "settings": {
         "color_scheme": "scheme-1",

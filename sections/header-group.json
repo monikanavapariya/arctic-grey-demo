@@ -14,10 +14,6 @@
     "header": {
       "type": "header",
       "settings": {
-        "btn_01": "Men",
-        "btn_url_01": "shopify://collections/all",
-        "btn_02": "Take The Quiz",
-        "btn_url_02": "shopify://collections/all",
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
