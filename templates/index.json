@@ -318,10 +318,10 @@
             "product": "magnesium-l-threonate-1"
           }
         },
-        "image_VUwtQx": {
+        "image_xiRTAz": {
           "type": "Image",
           "settings": {
-            "image": "shopify://shop_images/real-02.jpg",
+            "image": "shopify://shop_images/real-05.jpg",
             "product": "magnesium-l-threonate-1"
           }
         },
@@ -332,10 +332,10 @@
             "product": "magnesium-l-threonate-1"
           }
         },
-        "image_xiRTAz": {
+        "image_VUwtQx": {
           "type": "Image",
           "settings": {
-            "image": "shopify://shop_images/real-05.jpg",
+            "image": "shopify://shop_images/real-02.jpg",
             "product": "magnesium-l-threonate-1"
           }
         }
@@ -344,9 +344,9 @@
         "image_8KVgBp",
         "image_kikUFk",
         "image_8giw6c",
-        "image_VUwtQx",
+        "image_xiRTAz",
         "image_dMUdTe",
-        "image_xiRTAz"
+        "image_VUwtQx"
       ],
       "settings": {
         "title": "Real People. Real Results.",
