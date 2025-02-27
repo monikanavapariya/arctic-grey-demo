@@ -1,75 +1,655 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "video_text_tcqJcP": {
+      "type": "video-text",
+      "settings": {
+        "video": "shopify://files/videos/-f1d3-45a4-a2a8-c462f7e5812d.mp4",
+        "title": "Great things never camefrom comfort zones.",
+        "btn_title": "Shop Now",
+        "btn_link": "#"
+      }
+    },
+    "text_rotate_rkPBK9": {
+      "type": "text-rotate",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "text_icqCbn": {
+          "type": "Text",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "title": "High Quality Ingredients"
           }
         },
-        "button": {
-          "type": "buttons",
+        "text_mGxq3F": {
+          "type": "Text",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "title": "Independently Certified"
+          }
+        },
+        "text_kbQxp3": {
+          "type": "Text",
+          "settings": {
+            "title": "Expert Driven"
+          }
+        },
+        "text_Wq6TDA": {
+          "type": "Text",
+          "settings": {
+            "title": "Shipped Internationally"
+          }
+        },
+        "text_CLYRUU": {
+          "type": "Text",
+          "settings": {
+            "title": "High Quality Ingredients"
+          }
+        },
+        "text_ELCfPU": {
+          "type": "Text",
+          "settings": {
+            "title": "Independently Certified"
+          }
+        },
+        "text_A8jQJk": {
+          "type": "Text",
+          "settings": {
+            "title": "Expert Driven"
+          }
+        },
+        "text_XFhpP3": {
+          "type": "Text",
+          "settings": {
+            "title": "Shipped Internationally"
+          }
+        },
+        "text_Bqd9Wf": {
+          "type": "Text",
+          "settings": {
+            "title": "High Quality Ingredients"
+          }
+        },
+        "text_KimhNt": {
+          "type": "Text",
+          "settings": {
+            "title": "Independently Certified"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "text_icqCbn",
+        "text_mGxq3F",
+        "text_kbQxp3",
+        "text_Wq6TDA",
+        "text_CLYRUU",
+        "text_ELCfPU",
+        "text_A8jQJk",
+        "text_XFhpP3",
+        "text_Bqd9Wf",
+        "text_KimhNt"
+      ],
+      "settings": {}
+    },
+    "review_with_logo_RKMMRY": {
+      "type": "review-with-logo",
+      "blocks": {
+        "image_hqaihx": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/logo-07.jpg"
+          }
+        },
+        "image_mVrATr": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/logo-02.jpg"
+          }
+        },
+        "image_eqbCAG": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/logo-03.jpg"
+          }
+        },
+        "image_ex9ek9": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/logo-04.jpg"
+          }
+        },
+        "image_HzqnLi": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/logo-05.jpg"
+          }
+        },
+        "image_gc3QaX": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/logo-06.jpg"
+          }
+        },
+        "image_gPMaay": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/logo-07.jpg"
+          }
+        },
+        "image_anyiAD": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/logo-08.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_hqaihx",
+        "image_mVrATr",
+        "image_eqbCAG",
+        "image_ex9ek9",
+        "image_HzqnLi",
+        "image_gc3QaX",
+        "image_gPMaay",
+        "image_anyiAD"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "btn_title": "#1 Doctor Recommended",
+        "review_title": "12,000+ 5-star Reviews"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "image_text_grid_LzCTjN": {
+      "type": "image-text-grid",
+      "blocks": {
+        "grid_kNQJjy": {
+          "type": "Grid",
+          "settings": {
+            "image": "shopify://shop_images/grid-01.jpg",
+            "title": "Sleep",
+            "sub_title": "Optimize your sleep patterns.",
+            "link": "#"
+          }
+        },
+        "grid_M7mtKj": {
+          "type": "Grid",
+          "settings": {
+            "image": "shopify://shop_images/grid-02.jpg",
+            "title": "Cognitive Function",
+            "sub_title": "Enhance your brain's performance and connectivity",
+            "link": "#"
+          }
+        },
+        "grid_FRMXTB": {
+          "type": "Grid",
+          "settings": {
+            "image": "shopify://shop_images/grid-03.jpg",
+            "title": "Foundational Health",
+            "sub_title": "Promoting healthy, natural deep sleep day to day",
+            "link": "#"
+          }
+        },
+        "grid_KdrT9i": {
+          "type": "Grid",
+          "settings": {
+            "image": "shopify://shop_images/grid-04.jpg",
+            "title": "Athletic Performance",
+            "sub_title": "Increase your healthy tissue, muscle, and energy",
+            "link": "#"
+          }
+        },
+        "grid_r6fXLf": {
+          "type": "Grid",
+          "settings": {
+            "image": "shopify://shop_images/grid-05.jpg",
+            "title": "Hormone Support",
+            "sub_title": "Boost your mood, libido, and vitality",
+            "link": "#"
+          }
+        },
+        "grid_dkeYUd": {
+          "type": "Grid",
+          "settings": {
+            "image": "shopify://shop_images/grid-01.jpg",
+            "title": "Sleep",
+            "sub_title": "Optimize your sleep patterns.",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "grid_kNQJjy",
+        "grid_M7mtKj",
+        "grid_FRMXTB",
+        "grid_KdrT9i",
+        "grid_r6fXLf",
+        "grid_dkeYUd"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "title": "Start with your Goals",
+        "sub_title": "COMFORTABLY UNCOMFORTABLE",
+        "desc": "We cannot become what we want to be by remaining what we are."
+      }
+    },
+    "trending_collection_wi4Jmq": {
+      "type": "trending-collection",
+      "settings": {
+        "title": "Supplements",
+        "sub_title": "🌟 Trending",
+        "collection": "supplements",
         "image_ratio": "adapt",
         "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "show_secondary_image": false,
+        "quick_add": "standard"
       }
+    },
+    "icon_text_jUnfjb": {
+      "type": "icon-text",
+      "blocks": {
+        "icon_jhUDCw": {
+          "type": "Icon",
+          "settings": {
+            "image": "shopify://shop_images/like_1.png",
+            "title": "We Make It Easy",
+            "desc": "Personalized Solutions & Guidance Mean You Get Just What You Need Nothing More"
+          }
+        },
+        "icon_k4a3XP": {
+          "type": "Icon",
+          "settings": {
+            "image": "shopify://shop_images/leaves_1_1.png",
+            "title": "Clean & Effective",
+            "desc": "Proven Ingredients, not Artificial, Crafted By Experts For Optimal Effectiveness"
+          }
+        },
+        "icon_L7g7UM": {
+          "type": "Icon",
+          "settings": {
+            "image": "shopify://shop_images/consultation_1_1.png",
+            "title": "Your Free Dietitian",
+            "desc": "Every Gainful Subscriber Gets Free, 1:1 Access Their Own Registered Dietitian."
+          }
+        },
+        "icon_THNd6M": {
+          "type": "Icon",
+          "settings": {
+            "image": "shopify://shop_images/clipboard_1.png",
+            "title": "Made For You",
+            "desc": "Performance is Personal. Personalized & Customizable Products For Your Needs, Body & Goals"
+          }
+        }
+      },
+      "block_order": [
+        "icon_jhUDCw",
+        "icon_k4a3XP",
+        "icon_L7g7UM",
+        "icon_THNd6M"
+      ],
+      "settings": {
+        "title": "Clean Supplements - Made For You",
+        "sub_title": "🧐 Why Health & Fitness"
+      }
+    },
+    "real_people_result_zmVdgB": {
+      "type": "real-people-result",
+      "blocks": {
+        "image_8KVgBp": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/real-03.jpg",
+            "product": "magnesium-l-threonate-1"
+          }
+        },
+        "image_kikUFk": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/real-04.jpg",
+            "product": "magnesium-l-threonate-1"
+          }
+        },
+        "image_8giw6c": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/real-05.jpg",
+            "product": "magnesium-l-threonate-1"
+          }
+        },
+        "image_VUwtQx": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/real-02.jpg",
+            "product": "magnesium-l-threonate-1"
+          }
+        },
+        "image_dMUdTe": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/real-01.jpg",
+            "product": "magnesium-l-threonate-1"
+          }
+        },
+        "image_xiRTAz": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/real-05.jpg",
+            "product": "magnesium-l-threonate-1"
+          }
+        }
+      },
+      "block_order": [
+        "image_8KVgBp",
+        "image_kikUFk",
+        "image_8giw6c",
+        "image_VUwtQx",
+        "image_dMUdTe",
+        "image_xiRTAz"
+      ],
+      "settings": {
+        "title": "Real People. Real Results.",
+        "sub_title": "Trusted & Proven by Science",
+        "btn_title": "View All",
+        "btn_link": "shopify://collections/sleep"
+      }
+    },
+    "featured_bundle_FTnTLW": {
+      "type": "featured-bundle",
+      "blocks": {
+        "collection_Ab3nc7": {
+          "type": "Collection",
+          "settings": {
+            "collection": "sleep"
+          }
+        },
+        "collection_GJDNh4": {
+          "type": "Collection",
+          "settings": {
+            "collection": "cognitive-function"
+          }
+        },
+        "collection_MkwBjg": {
+          "type": "Collection",
+          "settings": {
+            "collection": "foundational-health"
+          }
+        },
+        "collection_afyQRU": {
+          "type": "Collection",
+          "settings": {
+            "collection": "athletic-performance"
+          }
+        },
+        "collection_96XfiU": {
+          "type": "Collection",
+          "settings": {
+            "collection": "hormone-support"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Ab3nc7",
+        "collection_GJDNh4",
+        "collection_MkwBjg",
+        "collection_afyQRU",
+        "collection_96XfiU"
+      ],
+      "settings": {
+        "title": "Bundles",
+        "sub_title": "📦 Goals Specific",
+        "btn_title": "View All Bundles",
+        "btn_link": "shopify://collections/all",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "quick_add": "standard"
+      }
+    },
+    "protein_powder_qWHphE": {
+      "type": "protein-powder",
+      "blocks": {
+        "text_YJBCj3": {
+          "type": "Text",
+          "settings": {
+            "image": "shopify://shop_images/pp-01.png",
+            "top_title": "The Blend",
+            "top_icon_01": "shopify://shop_images/Group.svg",
+            "top_icon_title_01": "Whey Based",
+            "top_icon_02": "shopify://shop_images/Group.svg",
+            "top_icon_title_02": "Build Muscle",
+            "top_icon_03": "shopify://shop_images/Group.svg",
+            "top_icon_title_03": "Clean Ingredients",
+            "title": "Active Ingredients",
+            "icon_01": "shopify://shop_images/Group_2.svg",
+            "icon_title_01": "Whey Protein Isolate",
+            "icon_desc_01": "Low Calorie With Virtually No Fat or Lactose, Quickly Absorbed To Maximize Muscle Building & Repair.",
+            "icon_02": "shopify://shop_images/Group_2.svg",
+            "icon_title_02": "Whey Protein Isolate",
+            "icon_desc_02": "Low Calorie With Virtually No Fat or Lactose, Quickly Absorbed To Maximize Muscle Building & Repair.",
+            "icon_03": "shopify://shop_images/Group_2.svg",
+            "icon_title_03": "Whey Protein Isolate",
+            "icon_desc_03": "Low Calorie With Virtually No Fat or Lactose, Quickly Absorbed To Maximize Muscle Building & Repair.",
+            "btn_title": "Customize This Blend",
+            "btn_link": "shopify://collections/all"
+          }
+        },
+        "text_9FzpnV": {
+          "type": "Text",
+          "settings": {
+            "image": "shopify://shop_images/pp-01.png",
+            "top_title": "The Blend",
+            "top_icon_01": "shopify://shop_images/Group.svg",
+            "top_icon_title_01": "Whey Based",
+            "top_icon_02": "shopify://shop_images/Group.svg",
+            "top_icon_title_02": "Build Muscle",
+            "top_icon_03": "shopify://shop_images/Group.svg",
+            "top_icon_title_03": "Clean Ingredients",
+            "title": "Active Ingredients",
+            "icon_01": "shopify://shop_images/Group_2.svg",
+            "icon_title_01": "Whey Protein Isolate",
+            "icon_desc_01": "Low Calorie With Virtually No Fat or Lactose, Quickly Absorbed To Maximize Muscle Building & Repair.",
+            "icon_02": "shopify://shop_images/Group_2.svg",
+            "icon_title_02": "Whey Protein Isolate",
+            "icon_desc_02": "Low Calorie With Virtually No Fat or Lactose, Quickly Absorbed To Maximize Muscle Building & Repair.",
+            "icon_03": "shopify://shop_images/Group_2.svg",
+            "icon_title_03": "Whey Protein Isolate",
+            "icon_desc_03": "Low Calorie With Virtually No Fat or Lactose, Quickly Absorbed To Maximize Muscle Building & Repair.",
+            "btn_title": "Customize This Blend",
+            "btn_link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "text_YJBCj3",
+        "text_9FzpnV"
+      ],
+      "settings": {
+        "title": "Customized Protein Powder",
+        "sub_title": "Simple & Effective Ingredients"
+      }
+    },
+    "image_banner_MEPMBx": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_QAt46V": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Next Generation is Here",
+            "heading_size": "h1"
+          }
+        },
+        "text_xjAxih": {
+          "type": "text",
+          "settings": {
+            "text": "Innovative Engineering. Intelligent Design. Meet The Plunge All-I.",
+            "text_style": "body"
+          }
+        },
+        "buttons_7D3CpH": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Take The Plunge",
+            "button_link_1": "shopify://collections/foundational-health",
+            "button_style_secondary_1": false,
+            "button_label_2": "Dive Deeper",
+            "button_link_2": "shopify://collections/athletic-performance",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_QAt46V",
+        "text_xjAxih",
+        "buttons_7D3CpH"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_478.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "latest_article_aT6BU6": {
+      "type": "latest-article",
+      "blocks": {
+        "article_FFAH9R": {
+          "type": "Article",
+          "settings": {
+            "article": "news/foundational-supplements-build-a-better-you"
+          }
+        },
+        "article_k46nAm": {
+          "type": "Article",
+          "settings": {
+            "article": "news/taming-the-fire-within-everything-you-need-to-know-about-inflammation"
+          }
+        },
+        "article_rKVapR": {
+          "type": "Article",
+          "settings": {
+            "article": "news/optimize-your-sleep-with-these-15-strategies"
+          }
+        }
+      },
+      "block_order": [
+        "article_FFAH9R",
+        "article_k46nAm",
+        "article_rKVapR"
+      ],
+      "settings": {
+        "title": "Latest Articles",
+        "sub_title": "✍️ Blogs",
+        "btn_title": "View All",
+        "btn_link": "shopify://blogs/news"
+      }
+    },
+    "instagram_H3pjze": {
+      "type": "instagram",
+      "blocks": {
+        "image_bbPVYx": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/Group_2858.jpg"
+          }
+        },
+        "image_fQAQ9B": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/Instagram.jpg"
+          }
+        },
+        "image_b87YkY": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-02.jpg"
+          }
+        },
+        "image_chwFze": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-03.jpg"
+          }
+        },
+        "image_dPVE4t": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-04.jpg"
+          }
+        },
+        "image_x4VA9F": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-05.jpg"
+          }
+        },
+        "image_cG8iFM": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-06.jpg"
+          }
+        },
+        "image_bfbfUX": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-07.jpg"
+          }
+        },
+        "image_fBtfkH": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-08.jpg"
+          }
+        },
+        "image_xXYNGE": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-09.jpg"
+          }
+        },
+        "image_3YWqCN": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify://shop_images/insta-10.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_bbPVYx",
+        "image_fQAQ9B",
+        "image_b87YkY",
+        "image_chwFze",
+        "image_dPVE4t",
+        "image_x4VA9F",
+        "image_cG8iFM",
+        "image_bfbfUX",
+        "image_fBtfkH",
+        "image_xXYNGE",
+        "image_3YWqCN"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "video_text_tcqJcP",
+    "text_rotate_rkPBK9",
+    "review_with_logo_RKMMRY",
+    "image_text_grid_LzCTjN",
+    "trending_collection_wi4Jmq",
+    "icon_text_jUnfjb",
+    "real_people_result_zmVdgB",
+    "featured_bundle_FTnTLW",
+    "protein_powder_qWHphE",
+    "image_banner_MEPMBx",
+    "latest_article_aT6BU6",
+    "instagram_H3pjze"
   ]
 }
