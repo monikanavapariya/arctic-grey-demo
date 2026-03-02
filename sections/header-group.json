@@ -33,25 +33,9 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "1772379472e1cd84b0": {
-      "type": "apps",
-      "blocks": {
-        "future_blink_demo_announcement_CGNWxQ": {
-          "type": "shopify://apps/future-blink-demo/blocks/announcement/019caa04-aa0c-7d8b-a4c6-fd39a9c6e740",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "future_blink_demo_announcement_CGNWxQ"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
-    "header",
-    "1772379472e1cd84b0"
+    "header"
   ]
 }
